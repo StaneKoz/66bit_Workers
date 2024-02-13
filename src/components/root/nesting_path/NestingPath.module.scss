@@ -1,0 +1,53 @@
+.nestingPath {
+  height: 90px;
+  background-color: rgb(var(--main-color));
+  margin-bottom: 16px;
+  
+  @media (max-width: 600px) {
+    height: 44px;
+  }
+}
+
+.nestingPathContainer {
+  display: flex;
+  align-items: center;
+}
+
+.nestingPathItem {
+  color: rgba(176, 176, 176, 1);
+  font-weight: 500px;
+  position: relative;
+  white-space: nowrap;
+  
+  &:last-of-type {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &:not(:last-of-type) {
+    padding-right: 48px;
+  }
+  @media (max-width: 400px) {
+    padding-right: 36px;
+  }
+
+  &:not(:last-child)::after {
+    content: "";
+    display: flex;
+    background: url('../../../static/icons/akar-icons_chevron-right.png') no-repeat center;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 16px;
+
+    @media (max-width: 600px) {
+      width: 12px;
+      height: 12px;
+      right: 12px;
+    }
+  }
+}

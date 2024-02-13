@@ -1,0 +1,45 @@
+@import '../../../static/styles/Themes.css';
+
+.container {
+  display: inline-block;
+}
+
+.input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;    
+}
+
+.customRadioList {
+  width: 19px;
+  height: 19px;
+  border: 1px solid rgba(21, 93, 164, 1);
+  border-radius: 2px;
+  background-color: rgb(var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  
+  img {
+    opacity: 0;
+  }
+
+  &:hover {
+    background-color: rgba(21, 93, 164, 0.3);
+    cursor: pointer;
+  }
+}
+
+.input:checked ~  .customRadioList {
+  background-color: rgba(21, 93, 164, 1);
+
+  img {
+    opacity: 1;
+  }
+}
+
+.input:disabled ~ .customRadioList {
+  background-color: rgb(var(--main-color));
+}
+

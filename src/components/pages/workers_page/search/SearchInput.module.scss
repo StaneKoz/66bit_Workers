@@ -1,0 +1,21 @@
+.input {
+  height: 43px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgba(176, 176, 176, 1);
+  width: 100%;
+
+  &::placeholder {
+    color: rgba(176, 176, 176, 1);
+    font-size: 20px;
+    line-height: 23.48px;
+
+    @media(max-width: 600px) {
+      font-size: 14px;
+    }
+  }
+
+  &:focus {
+    border: 1px solid rgba(21, 93, 164, 1);
+  }
+}

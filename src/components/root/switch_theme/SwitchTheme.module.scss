@@ -1,0 +1,51 @@
+.container {
+  width: 55px;
+  height: 26px;
+  border-radius: 30px;
+  background-color: rgba(21, 93, 164, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    width: 47px;
+    height: 22.22px;
+  }
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: left right 0.5s;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (max-width: 600px) {
+    width: 17px;
+    height: 17px;
+  }
+  
+  img {
+    width: 80%;
+    height: auto;
+  }
+
+  &.light {
+    right: 3px;
+  }
+
+  &.dark {
+    left: 3px;
+  }
+}

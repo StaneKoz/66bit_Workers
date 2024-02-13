@@ -1,0 +1,35 @@
+
+.page {
+  font-size: 18px;
+  line-height: 21px;
+  color: rgb(var(--text-color));
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  background-color: rgb(var(--main-color));
+  min-height: 100vh;
+  
+  @media (max-width: 600px) {
+    font-size: 12px;
+    line-height: 14.09px;
+  }
+}
+
+._container {
+  max-width: 1560px;
+  padding: 0 10px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  height: 100%;
+
+  @media(max-width: 600px) {
+    padding: 0 24px;
+  }
+}
+
+a {
+  transition: 0.2s;
+}
+
+.main {
+  background-color: rgb(var(--main-color));
+}

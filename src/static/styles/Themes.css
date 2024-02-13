@@ -1,0 +1,25 @@
+:root {
+  --main-color-light: 255, 255, 255;
+  --second-color-light: 242, 242, 242;
+  --text-color-light: 41, 41, 41;
+  --box-shadow-light: 0px 4px 8px 0px rgba(57, 113, 164, 0.25);
+
+  --main-color-dark: 41, 41, 41;
+  --second-color-dark: 62, 62, 62;
+  --text-color-dark: 245, 245, 245;
+  --box-shadow-dark: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] {
+  --main-color: var(--main-color-light);
+  --second-color: var(--second-color-light);
+  --text-color: var(--text-color-light);
+  --box-shadow: var(--box-shadow-light);
+}
+
+[data-theme="dark"] {
+  --main-color: var(--main-color-dark);
+  --second-color: var(--second-color-dark);
+  --text-color: var(--text-color-dark);
+  --box-shadow: var(--box-shadow-dark);
+}

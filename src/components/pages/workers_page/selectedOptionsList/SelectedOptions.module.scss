@@ -1,0 +1,81 @@
+@import '../../../../static/styles/Themes.css';
+
+.wrapper  {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+}
+
+.list {
+  display: flex;
+  column-gap: 23px;
+  flex-wrap: wrap;
+  row-gap: 24px;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 23.48px;
+  font-weight: 500;
+  margin-right: 40px;
+
+  @media (max-width: 600px) {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 470px) {
+    font-size: 14px;
+    line-height: 16.44px;
+  }
+}
+
+.item {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: rgb(var(--main-color)); 
+}
+
+.removeBtn {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  position: relative;
+  margin-right: 5px;
+
+  &:hover > div {
+    background-color: red;
+  }
+  > div
+
+  {
+    background-color: rgb(var(--text-color));
+    height: 1px;
+    width: 110%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .first {
+    transform: rotate(45deg);
+  }
+
+  .second {
+    transform: rotate(-45deg);
+  }
+}
+
+.emptyList {
+  font-size: 16px;
+  font-weight: 300;
+
+  @media(max-width: 470px) {
+    font-size: 12px;
+  }
+}

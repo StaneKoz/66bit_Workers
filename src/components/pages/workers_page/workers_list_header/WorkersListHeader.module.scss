@@ -1,0 +1,33 @@
+
+.workersListHeader {
+  padding: 0 12px;
+}
+
+.workersListHeaderContainer {
+  @media (max-width: 1012px) {
+    width: 945px;
+  }
+  display: flex;
+  --max-width: 1560;
+  color: rgba(176, 176, 176, 1);
+  font-size: 20px;
+  line-height: 23.48px;
+  font-weight: 500;
+  height: 79px;
+  align-items: center;
+  column-gap: 15px;
+  border-bottom: none;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+    line-height: 14.09px;
+    height: 35px;
+    align-items: end;
+  }
+
+  @media (max-width: 1012px) {
+    & > div {
+      flex-shrink: 0;
+    }
+  }
+}

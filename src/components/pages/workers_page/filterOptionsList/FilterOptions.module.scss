@@ -1,0 +1,12 @@
+
+.optionsList {
+  display: flex;
+  align-items: center;
+  @media(min-width: 601px) {
+   column-gap: 32px; 
+  }
+  
+  @media(max-width: 937px) {
+    justify-content: space-between;
+  }
+}

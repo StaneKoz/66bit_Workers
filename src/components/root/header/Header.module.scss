@@ -1,0 +1,72 @@
+@import "/src/static/styles/Themes.css";
+
+.header {
+  height: 90px;
+  box-shadow: var(--box-shadow);
+  background-color: rgb(var(--main-color));
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 400px) {
+    height: 54px;
+  }
+}
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo a{
+  width: 101px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(21, 93, 164, 0);
+
+  &:hover  {
+    border-bottom: 2px solid rgba(21, 93, 164, 1);
+  }
+
+  @media (max-width: 400px) {
+    width: 52px;
+    height: 22px;
+  }
+
+  img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+.contacts {
+  margin-left: auto;
+  display: flex;
+  column-gap: 64px;
+
+  @media (max-width: 725px) {
+    column-gap: 34px;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.contactsItem {
+  a {
+    color: rgb(var(--text-color));
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+}
+
+.switchTheme {
+  margin-left: 48px;
+  @media(max-width: 600px) {
+    margin-left: auto;
+  }
+}

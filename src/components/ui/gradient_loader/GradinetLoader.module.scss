@@ -1,0 +1,30 @@
+
+.list {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.item {
+  background: linear-gradient(90deg, rgba(var(--text-color), 0.6), rgba(var(--text-color), 0.4));
+  height: 79px;
+  border-radius: 8px;
+  background-size: 200%;
+  animation: gradient 1s infinite;
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: 100%;
+  }
+}
