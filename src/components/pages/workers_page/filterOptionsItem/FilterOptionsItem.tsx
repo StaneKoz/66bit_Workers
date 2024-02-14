@@ -70,7 +70,7 @@ const FilterOptionsItem: FC<IFilterOptionsItemProps> = ({ item }) => {
                 {value}
               </div>
               <div className={style.radio}>
-                <CustomRadio className={radioStyle.customRadioList} name={item.option.key} value={key} ruValue={value}/>
+                <CustomRadio className={radioStyle.customRadioList} name={item.option.key} value={key} ruValue={value} type={item.type}/>
               </div>
             </div>
           ))

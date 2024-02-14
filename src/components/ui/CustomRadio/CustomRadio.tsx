@@ -6,9 +6,10 @@ interface ICustomRadioProps {
   name: string,
   value: string,
   ruValue?: string
+  type: 'radio' | 'checkbox';
 }
 
-const CustomRadio:FC<PropsWithChildren<ICustomRadioProps>> = ({ children, className, name, value, ruValue }) => {
+const CustomRadio:FC<ICustomRadioProps> = ({ className, name, value, ruValue, type }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   function clickHandler(ev: React.MouseEvent<HTMLInputElement>) {
@@ -19,7 +20,7 @@ const CustomRadio:FC<PropsWithChildren<ICustomRadioProps>> = ({ children, classN
 
   return (
     <div className={style.container}>
-      <input type='radio' name={name} className={style.input} value={value} ref={inputRef} form={'123'} data-ru-value={ruValue ?? ''}/>
+      <input type={type} name={name} className={style.input} value={value} ref={inputRef} form={'123'} data-ru-value={ruValue ?? ''}/>
       <div className={[className, style.customRadio].join(' ')} onClick={clickHandler}>
         <img className={style.tick} src={require('../../../static/icons/tick.svg').default}/>
       </div>    

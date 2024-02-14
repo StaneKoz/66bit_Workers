@@ -22,7 +22,6 @@ const SelectedOptions = () => {
 
   function removeHandler(ev: React.MouseEvent<HTMLButtonElement>) {
     const elementForRemove = selectedOptions.filter(input => ev.currentTarget.dataset.inputValue == input.value)[0];
-    //elementForRemove.checked = false;
     elementForRemove.checked = false;
     setSelectedOptions(selectedOptions.filter(element => element != elementForRemove));
   }

@@ -1,18 +1,12 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { NestingContext } from '../../../root/Root';
-import { observe } from 'mobx';
 import { observer } from 'mobx-react-lite';
 import style from './WorkersPage.module.scss';
-import { IFilterOption } from '../types/IFilterOption';
-import { FilterOption } from '../types/FilterOptions';
-import CustomRadio from '../../../ui/CustomRadio/CustomRadio';
 import FilterOptionsList from '../filterOptionsList/FilterOptionsList';
 import WorkersList from '../workers_list/WorkersList';
-import { Form, useFetcher } from 'react-router-dom';
+import { useFetcher } from 'react-router-dom';
 import { IWorkerItem } from '../types/IWorkerItem';
-import WorkersListHeader from '../workers_list_header/WorkersListHeader';
 import SelectedOptions from '../selectedOptionsList/SelectedOptions';
-import GradientLoader from '../../../ui/gradient_loader/GradientLoader';
 import { filterOptions } from '../../../../const/filterOptions';
 import SearchInput from '../search/SearchInput';
 
@@ -66,6 +60,8 @@ const WorkersPage = observer(() => {
   }, [fethcer.data]);
 
   function formDataHandler(ev: FormDataEvent) {
+    const stack =  Array.from(formRef.current.elements).map(elem => elem as HTMLInputElement).filter(input => input.checked).map(input => input.value);
+    ev.formData.set('Stack', JSON.stringify(stack))
     ev.formData.set("Page", currentPage.toString());
     ev.formData.set("Count", countRecords.toString());
   };

@@ -3,6 +3,7 @@ import { IFilterOption } from "../components/pages/workers_page/types/IFilterOpt
 export const filterOptions: IFilterOption[] = [
   {
     option: { key: 'Position', value: "Должность" },
+    type: 'radio',
     items: {
       Frontend: 'Фронтенд-разработчик',
       Backend: 'Backend-разработчик',
@@ -13,6 +14,7 @@ export const filterOptions: IFilterOption[] = [
   },
   {
     option: { key: "Gender", value: "Пол" },
+    type: 'radio',
     items: {
       Male: "Мужской",
       Female: "Женский"
@@ -20,6 +22,7 @@ export const filterOptions: IFilterOption[] = [
   },
   {
     option: { key: 'Stack', value: 'Технологии' },
+    type: 'checkbox',
     items: {
       CSharp: 'C#',
       React: 'React',
