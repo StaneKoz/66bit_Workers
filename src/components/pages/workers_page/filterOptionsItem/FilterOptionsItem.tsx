@@ -11,22 +11,46 @@ interface IFilterOptionsItemProps {
 
 const FilterOptionsItem: FC<IFilterOptionsItemProps> = ({ item }) => {
   const textRef = useRef<HTMLDivElement>(null);
+  const selectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (getDeviceType() == 'mobile' && textRef.current != null) {
+    if (textRef.current == null) return;
+    if (getDeviceType() == 'mobile') {
      textRef.current.addEventListener('click', clickHanler); 
+    } else {
+      textRef.current.addEventListener('mouseover', mouseOverHandleer);
+      textRef.current.addEventListener('mouseout', mouseOutHandler);
     }
   }, []);
 
+  useEffect(() => {
+
+  })
+
+  function mouseOverHandleer(ev: MouseEvent) {
+    textRef.current?.classList.add(style.active)
+    const coordinates = textRef.current?.getBoundingClientRect();
+    console.log(coordinates)
+  }
+
+  function mouseOutHandler(ev: MouseEvent) {
+    textRef.current?.classList.remove(style.active)
+  }
+
   function clickHanler(ev: any) {
-    if (textRef.current == null) {
+    if (textRef.current == null || selectRef.current == null) {
       return
     }
 
     if (textRef.current.classList.contains(style.active)) {
       textRef.current.classList.remove(style.active);
     } else {
-      textRef.current.classList.add(style.active)
+      textRef.current.classList.add(style.active);
+      const coordinates = selectRef.current?.getBoundingClientRect();
+
+      if (coordinates?.left < 0) {
+        selectRef.current.classList.add(style.left)
+      } 
     }
   }
 
@@ -38,7 +62,7 @@ const FilterOptionsItem: FC<IFilterOptionsItemProps> = ({ item }) => {
       <div className={style.selectArrow}>
         <img src={require('../../../../static/icons/top-arrow-icon.svg').default} alt='icon' />
       </div>
-      <div className={style.dropDownSelect}>
+      <div className={style.dropDownSelect} ref={selectRef}>
         {
           Object.entries(item.items).map(([key, value]) => (
             <div className={style.selectItem} key={key}>
