@@ -60,7 +60,7 @@ const WorkersPage = observer(() => {
   }, [fethcer.data]);
 
   function formDataHandler(ev: FormDataEvent) {
-    const stack =  Array.from(formRef.current.elements).map(elem => elem as HTMLInputElement).filter(input => input.checked).map(input => input.value);
+    const stack =  Array.from(formRef.current.elements).map(elem => elem as HTMLInputElement).filter(input => input.checked && input.name == 'Stack').map(input => input.value);
     ev.formData.set('Stack', JSON.stringify(stack))
     ev.formData.set("Page", currentPage.toString());
     ev.formData.set("Count", countRecords.toString());
